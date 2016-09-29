@@ -5,8 +5,9 @@
 	<title>jQuery UI Example Page</title>
 	<link href="jquery-ui.min.css" rel="stylesheet">
 	<style>
-		#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-		#sortable li { margin: 5px; padding: 5px; font-size: 1.2em; }
+		.container {margin: 20px auto; display:block; width: 60%; }
+		#sortable { list-style-type: none; margin: 0; margin-bottom: 25px; padding: 0;}
+		#sortable li { margin-bottom: 5px; padding: 5px; font-size: 1.2em; }
 		html>body #sortable li { line-height: 1.2em; }
 		.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 		.ui-state-default {
@@ -18,21 +19,28 @@
 			color: purple;
 			cursor: pointer;
 		}
+
 	</style>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	</head>
 	<body>
 
-	<ul id="sortable">
-	  <li id="1" class="ui-state-default">Item 1<span>duplicate</span></li>
-	  <li id="2" class="ui-state-default">Item 2<span>duplicate</span></li>
-	  <li id="3" class="ui-state-default">Item 3<span>duplicate</span></li>
-	  <li id="4" class="ui-state-default">Item 4<span>duplicate</span></li>
-	  <li id="5" class="ui-state-default">Item 5<span>duplicate</span></li>
-	  <li id="6" class="ui-state-default">Item 6<span>duplicate</span></li>
-	  <li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
-	</ul>
+	<div class="container">
+		<ul id="sortable">
+		  <li id="1" class="ui-state-default">Item 1<span>duplicate</span></li>
+		  <li id="2" class="ui-state-default">Item 2<span>duplicate</span></li>
+		  <li id="3" class="ui-state-default">Item 3<span>duplicate</span></li>
+		  <li id="4" class="ui-state-default">Item 4<span>duplicate</span></li>
+		  <li id="5" class="ui-state-default">Item 5<span>duplicate</span></li>
+		  <li id="6" class="ui-state-default">Item 6<span>duplicate</span></li>
+		  <li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
+		</ul>
+
+		<button class="dump">DUMP</button>
+		<input class="result" type="text">
+
+	</div>
 
 	<script>
 		// this IIFE will activate sorting
@@ -45,10 +53,11 @@
 
 
 		// running order() will tell us the order of the list items
-		function order(){
+		$('.dump').click(function(){
 		   var idsInOrder = $("#sortable").sortable("toArray");
-		   console.log(idsInOrder);
-		}
+		  //  console.log(idsInOrder);
+			$('.result').val(idsInOrder);
+		});
 
 		$('.ui-state-default span').click(function(){
 			$(this).parent().clone().appendTo($(this).parent().parent());
