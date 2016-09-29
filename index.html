@@ -59,9 +59,17 @@
 			$('.result').val(idsInOrder);
 		});
 
+
+		// duplication function
 		$('.ui-state-default span').click(function(){
 			$(this).parent().clone().appendTo($(this).parent().parent());
 		});
+
+
+		// refresh warning
+		// window.onbeforeunload = function() {
+		//   return "Data will be lost if you leave the page, are you sure?";
+		// };
 	</script>
 
 </body>
