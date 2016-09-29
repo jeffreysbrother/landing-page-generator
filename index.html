@@ -6,6 +6,9 @@
 	<link href="jquery-ui.min.css" rel="stylesheet">
 	<style>
 		.container {margin: 20px auto; display:block; width: 60%; }
+		h1 {
+			margin-bottom: 0;
+		}
 		#sortable,
 		#sortable2 { list-style-type: none; margin: 0; margin-bottom: 25px; padding: 0;}
 		#sortable li,
@@ -30,6 +33,7 @@
 	<body>
 
 	<div class="container">
+		<h1>components</h1>
 		<ul id="sortable">
 		  <li id="1" class="ui-state-default">Item 1<span>duplicate</span></li>
 		  <li id="2" class="ui-state-default">Item 2<span>duplicate</span></li>
@@ -40,8 +44,9 @@
 		  <li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
 		</ul>
 
-		<hr>
+		<!-- <hr> -->
 
+		<h1>result</h1>
 		<ul id="sortable2">
 			<li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
 		</ul>
