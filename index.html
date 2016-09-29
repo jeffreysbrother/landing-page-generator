@@ -49,6 +49,10 @@
 		   var idsInOrder = $("#sortable").sortable("toArray");
 		   console.log(idsInOrder);
 		}
+
+		$('.ui-state-default span').click(function(){
+			$(this).parent().clone().appendTo($(this).parent().parent());
+		});
 	</script>
 
 </body>
