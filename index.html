@@ -6,11 +6,17 @@
 	<link href="jquery-ui.min.css" rel="stylesheet">
 	<style>
 		#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-		#sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
-		html>body #sortable li { height: 1.5em; line-height: 1.2em; }
+		#sortable li { margin: 5px; padding: 5px; font-size: 1.2em; }
+		html>body #sortable li { line-height: 1.2em; }
 		.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 		.ui-state-default {
+			vertical-align: middle;
 			cursor: move;
+		}
+		.ui-state-default span {
+			float: right;
+			color: purple;
+			cursor: pointer;
 		}
 	</style>
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -19,13 +25,13 @@
 	<body>
 
 	<ul id="sortable">
-	  <li id="1" class="ui-state-default">Item 1</li>
-	  <li id="2" class="ui-state-default">Item 2</li>
-	  <li id="3" class="ui-state-default">Item 3</li>
-	  <li id="4" class="ui-state-default">Item 4</li>
-	  <li id="5" class="ui-state-default">Item 5</li>
-	  <li id="6" class="ui-state-default">Item 6</li>
-	  <li id="7" class="ui-state-default">Item 7</li>
+	  <li id="1" class="ui-state-default">Item 1<span>duplicate</span></li>
+	  <li id="2" class="ui-state-default">Item 2<span>duplicate</span></li>
+	  <li id="3" class="ui-state-default">Item 3<span>duplicate</span></li>
+	  <li id="4" class="ui-state-default">Item 4<span>duplicate</span></li>
+	  <li id="5" class="ui-state-default">Item 5<span>duplicate</span></li>
+	  <li id="6" class="ui-state-default">Item 6<span>duplicate</span></li>
+	  <li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
 	</ul>
 
 	<script>
@@ -36,6 +42,7 @@
 			});
 			$( "#sortable" ).disableSelection();
 		})();
+
 
 		// running order() will tell us the order of the list items
 		function order(){
