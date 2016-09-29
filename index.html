@@ -12,14 +12,6 @@
 	</style>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script>
-		$( function() {
-			$( "#sortable" ).sortable({
-				placeholder: "ui-state-highlight"
-			});
-			$( "#sortable" ).disableSelection();
-		} );
-	</script>
 	</head>
 	<body>
 
@@ -32,6 +24,15 @@
 	  <li class="ui-state-default">Item 6</li>
 	  <li class="ui-state-default">Item 7</li>
 	</ul>
+
+	<script>
+		(function() {
+			$( "#sortable" ).sortable({
+				placeholder: "ui-state-highlight"
+			});
+			$( "#sortable" ).disableSelection();
+		})();
+	</script>
 
 </body>
 </html>
