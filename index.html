@@ -6,9 +6,12 @@
 	<link href="jquery-ui.min.css" rel="stylesheet">
 	<style>
 		.container {margin: 20px auto; display:block; width: 60%; }
-		#sortable { list-style-type: none; margin: 0; margin-bottom: 25px; padding: 0;}
-		#sortable li { margin-bottom: 5px; padding: 5px; font-size: 1.2em; }
-		html>body #sortable li { line-height: 1.2em; }
+		#sortable,
+		#sortable2 { list-style-type: none; margin: 0; margin-bottom: 25px; padding: 0;}
+		#sortable li,
+		#sortable2 li { margin-bottom: 5px; padding: 5px; font-size: 1.2em; }
+		html>body #sortable li,
+		html>body #sortable2 li { line-height: 1.2em; }
 		.ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 		.ui-state-default {
 			vertical-align: middle;
@@ -37,6 +40,14 @@
 		  <li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
 		</ul>
 
+		<hr>
+
+		<ul id="sortable2">
+			<li id="7" class="ui-state-default">Item 7<span>duplicate</span></li>
+		</ul>
+
+
+
 		<button class="dump">DUMP ORDER</button>
 		<input class="result" type="text">
 
@@ -46,15 +57,26 @@
 		// this IIFE will activate sorting
 		(function() {
 			$( "#sortable" ).sortable({
+				connectWith: "#sortable2",
 				placeholder: "ui-state-highlight"
 			});
 			$( "#sortable" ).disableSelection();
 		})();
 
+		(function() {
+			$( "#sortable2" ).sortable({
+				connectWith: "#sortable",
+				placeholder: "ui-state-highlight"
+			});
+			$( "#sortable2" ).disableSelection();
+		})();
+
+
+
 
 		// running order() will tell us the order of the list items
 		$('.dump').click(function(){
-		   var idsInOrder = $("#sortable").sortable("toArray");
+		   var idsInOrder = $("#sortable2").sortable("toArray");
 		  //  console.log(idsInOrder);
 			$('.result').val(idsInOrder);
 		});
