@@ -2,6 +2,7 @@
   margin: 20px auto;
   display: block;
   width: 60%;
+  max-width: 1100px;
 }
 
 h1 {
@@ -57,4 +58,10 @@ html>body #sortable2 li {
   float: right;
   color: purple;
   cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    width: 100%;
+  }
 }
