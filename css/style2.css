@@ -2,11 +2,35 @@
 body { font-family: Helvetica, Arial, sans-serif; }
 h1 { font-weight: bold; margin-bottom: 10px; }
 
-.group {
-    width: 222px;
-    margin: 5px 0 5px 5px;
-    float: left;
+html, body {
+  height: 100%;
+  width: 100%;
 }
+
+.group {
+  width: 333px;
+  margin: 0;
+  /*float: left;*/
+  padding: 25px 40px;
+}
+
+.left-panel {
+  width: 30%;
+  height: 100%;
+  float: left;
+  background-color: #deeff5;
+  box-sizing: border-box;
+  border-right: 2px solid #9bc2cf;
+}
+
+.right-panel {
+  width: 70%;
+  height: 100%;
+  float: right;
+  background-color: #DDF9DD;
+  box-sizing: border-box;
+}
+
 
 .parent {
     list-style-type: none;
@@ -20,11 +44,11 @@ h1 { font-weight: bold; margin-bottom: 10px; }
 }
 
 .parent li.active {
-    background: yellow;
+    background: pink;
 }
 
 .parent li.hover {
-    background: orange;
+    background: #ffd27f;
 }
 
 .parent li.hover span {
