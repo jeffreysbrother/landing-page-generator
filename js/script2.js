@@ -101,3 +101,12 @@ $(".droppable").droppable({
         }
     }
 });
+
+
+// running order() will tell us the order of the list items
+$('.dump').click(function(){
+  //  var idsInOrder = $(".parent").children().droppable("toArray");
+  var idsInOrder = $(".output .draggable").attr('id');
+  //  console.log(idsInOrder);
+  $('.result').val(idsInOrder);
+});
