@@ -15,19 +15,25 @@
   <a href="#" id="header">header</a>
   <a href="#" id="blockA">blockA</a>
   <a href="#" id="blockB">blockB</a>
+  <a href="#" id="save">save to variable and print to console</a>
 
   <div id="body"></div>
 
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script>
     $('#header').click(function(){
-      $('<div class="header"><h1>header</h1></div>').appendTo('#body');
+      $('<div class=\"header\"><h1>Header</h1></div>').appendTo('#body');
     });
     $('#blockA').click(function(){
-      $('<div class="blockA"><h1>A</h1></div>').appendTo('#body');
+      $('<div class=\"blockA\"><h1>A</h1></div>').appendTo('#body');
     });
     $('#blockB').click(function(){
-      $('<div class="blockB"><h1>B</h1></div>').appendTo('#body');
+      $('<div class=\"blockB\"><h1>B</h1></div>').appendTo('#body');
+    });
+
+    $('#save').click(function(){
+      var page = $("#body").html();
+      console.log(page);
     });
   </script>
 
