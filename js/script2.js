@@ -1,6 +1,8 @@
 $(".draggable").draggable({
     revert: true,
-    revertDuration: 0
+    revertDuration: 0,
+    // helper: 'clone',
+    // revert: 'invalid'
 });
 
 $(".droppable").droppable({
@@ -105,8 +107,12 @@ $(".droppable").droppable({
 
 // running order() will tell us the order of the list items
 $('.dump').click(function(){
-  //  var idsInOrder = $(".parent").children().droppable("toArray");
-  var idsInOrder = $(".output .draggable").attr('id');
-  //  console.log(idsInOrder);
-  $('.result').val(idsInOrder);
+  // var idsInOrder = {};
+  // idsInOrder = $(".output .draggable").attr('id');
+  var lis = []
+  // var lis = $(".output .draggable").toArray();
+  $(".output .draggable").each(function(){
+    lis.push($(this).attr('id'));
+  });
+  $('.result').val(lis);
 });
